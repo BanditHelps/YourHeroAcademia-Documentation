@@ -1,0 +1,96 @@
+---
+title: Blackwhip
+description: Manifest energy tendrils from any part of your body — tether, puppet, swing, zip, and reinforce with the Blackwhip quirk (yha:blackwhip).
+sidebar_position: 1
+---
+
+import QuirkIcon from '@site/src/components/QuirkIcon';
+
+# Blackwhip
+
+<p>
+  <QuirkIcon src="/img/quirks/blackwhip/blackwhip_title.png" size="title" alt="Blackwhip" />
+</p>
+
+Manifest energy tendrils from any part of your body and command them at will!
+
+Blackwhip is an extremely versatile quirk. While primarily a utility quirk, it has movement, offensive, and defensive aspects as well.
+
+See **[Abilities](./abilities.mdx)** for every bar skill, and **[Upgrade Tree](./upgrades.mdx)** for every buyable node.
+
+## Quirk Information
+
+| Property | Value |
+|----------|-------|
+| **Quirk ID** | `yha:blackwhip` |
+| **Category** | Major |
+| **Rarity** | Rare |
+| **Parent Power** | `yha:quirk` |
+| **GUI Display** | Tree |
+
+## How to Obtain
+
+Currently, the only way to obtain quirks is through the Palladium command:
+
+```
+/palladium superpower add yha:blackwhip @p
+```
+
+See [How to obtain](../../index.md) for the shared quirk command format.
+
+## Ability Bar
+
+Blackwhip abilities occupy **five Palladium ability slots**. Several skills share a slot as modes — hold **Left Alt** (**Ability Mode Select**) to cycle the mode on the slot you are using.
+
+| Slot | Modes |
+|------|--------|
+| **1** | Tether, Tether (AOE), Detach (Single), Detach (All) |
+| **2** | Puppet (Single), Puppet (All) |
+| **3** | Manual Swing, Web Swing |
+| **4** | Whip Zip, Charge Zip, Block Toss |
+| **5** | Lock, Disarm, Auto Pickup, Body Reinforce |
+
+:::tip Starting kit
+These come free with the quirk: **Tether**, **Detach (All)**, **Puppet (Single)**, and **Whip Zip**. Everything else is bought with [upgrade points](../../../core-systems/stamina/stamina-progression-and-training.md).
+:::
+
+## Core Tether Rules
+
+Blackwhip is a **chain-tether** system. Tips fly out from your body, latch on contact, and stay until you detach them, they snap, or you replace them.
+
+- **Max tethers** starts at **1**. Upgrades raise the cap to 5, and **Quirk Factor** adds more (`QF × 2`).
+- **Tether health** starts at **1 heart**. If a chain takes enough damage, it snaps.
+- **Grab slots are shared.** Tether, Auto Pickup, and Block Toss all consume the same tether count. Tagged enemies occupy slots that Magnet / Toss would otherwise use.
+- **Movement ropes are separate.** Swing, Web Swing, Zip, and Charge Zip use their own movement chains (typically up to 2) and do not steal grab slots the same way.
+- **Disarm** fires one independent chain and does not count against your grab cap.
+- Chains do not expire on a timer. They last until released, broken, or replaced.
+- Chains can be damaged/destroyed by melee attacks, projectiles, and explosions.
+
+## Quirk Factor
+
+**Quirk Factor (QF)** is an attribute (`yha:quirk_factor`) that scales Blackwhip as you grow. At `0` you use the base numbers on each ability. Higher QF adds:
+
+- Extra tethers: `max tethers + (QF × 2)`
+- Extra grab range, snap distance, pull, launch, and several damage values
+
+Exact formulas live on the [Abilities](./abilities.mdx) page next to each skill.
+
+Upgrade points are earned by spending [stamina](../../../core-systems/stamina/stamina-system-overview.md) under pressure. See [Stamina Progression and Training](../../../core-systems/stamina/stamina-progression-and-training.md) for how points drop.
+
+## Whip Color
+
+Customize the look of your tendrils. Colors persist and sync to other players. Hex accepts `RRGGBB`, `#RRGGBB`, or `AARRGGBB`.
+
+```
+/yha blackwhip color <inner> <glow>
+/yha blackwhip color <inner> <outer> <glow>
+/yha blackwhip color reset
+```
+
+Default canon colors:
+
+| Layer | Hex |
+|-------|-----|
+| **Inner / core** | `#101A1A` |
+| **Outer** | `#25BE9C` |
+| **Glow** | `#25BE9C` |

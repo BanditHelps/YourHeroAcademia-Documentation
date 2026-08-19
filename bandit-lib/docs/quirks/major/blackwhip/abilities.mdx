@@ -1,0 +1,369 @@
+---
+title: Blackwhip Abilities
+sidebar_label: Abilities
+description: Every Blackwhip ability — bar slots, controls, stamina, and stats.
+sidebar_position: 2
+---
+
+import AbilityCard from '@site/src/components/AbilityCard';
+
+# Blackwhip Abilities
+
+Abilities that share a slot are **modes**. Hold **Left Alt** (**Ability Mode Select**) to cycle them. **QF** means [Quirk Factor](./index.mdx#quirk-factor).
+
+
+## Slot 1 — Grab / Release
+
+Tether and Detach share **Slot 1**. After you buy [AOE Grab](./upgrades.mdx#grab), crouch (Shift by default) while holding Tether to fire **Tether (AOE)** instead.
+
+### Tether
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/tether.png"
+  name="Tether"
+  slot="Slot 1"
+  mode="Hold"
+  stamina="No stamina">
+
+Shoot an energy tendril towards any opponent or entity. If they are hit, they become ensnared in your whip, allowing you to perform multiple actions.
+
+The tip travels along your look direction and latches on contact. This is not a hitscan ability, meaning it can be dodged/deflected. Tagged targets can be puppeteered, leashed, slammed, or released.
+
+Buy [Item Pull](./upgrades.mdx#items) so a tether tip can also snatch dropped items into your inventory.
+
+| Stat | Value |
+|------|-------|
+| **Range** | 9 / 12 / 15 + `QF × 3` (base / Range I / Range II) |
+| **Snap distance** | `28 + QF × 4` |
+| **Travel time** | 12 ticks |
+| **Unlock** | Free with the quirk |
+
+</AbilityCard>
+
+### Tether (AOE)
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/aoe_tether.png"
+  name="Tether (AOE)"
+  slot="Slot 1"
+  mode="Hold + Crouch"
+  stamina="No stamina">
+
+Hold Shift while using Tether to automatically grab all nearby entities within range, up to your max tethers. Tips still have to connect — fast targets can dodge.
+
+Uses unused grab slots. Same range and snap distance as Tether.
+
+| Stat | Value |
+|------|-------|
+| **Range** | Same as Tether |
+| **Targets** | Nearby living entities, up to free tether slots |
+| **Unlock** | [AOE Grab](./upgrades.mdx#grab) (4 points) |
+
+</AbilityCard>
+
+### Detach (All)
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/detach_all.png"
+  name="Detach (All)"
+  slot="Slot 1"
+  mode="Press"
+  stamina="No stamina">
+
+Release all of your active chain tethers at once.
+
+Also stops swing / web / zip / charge sessions and drops Block Toss carries.
+
+| Stat | Value |
+|------|-------|
+| **Range** | 20 blocks |
+| **Unlock** | Free with the quirk |
+
+</AbilityCard>
+
+### Detach (Single)
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/detach_single.png"
+  name="Detach (Single)"
+  slot="Slot 1"
+  mode="Press"
+  stamina="No stamina">
+
+Release only the tether of the entity you are looking at.
+
+| Stat | Value |
+|------|-------|
+| **Range** | 20 blocks |
+| **Unlock** | 2 points, requires Detach (All) |
+
+</AbilityCard>
+
+## Slot 2 — Puppet
+
+Drag tagged targets toward a hold point in front of your crosshair. Heavier or bigger hitboxes need more **Strength** — oversized loads slow you down, and can drag you if they overpower you.
+
+With [Lock](#lock) on, scroll **up** to lengthen tethers and **down** to shorten them.
+
+### Puppet (Single)
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/puppet.png"
+  name="Puppet (Single)"
+  slot="Slot 2"
+  mode="Hold"
+  stamina="8 / 1s">
+
+Hold to drag the looked-at (or nearest) tagged target to a point in front of your crosshair.
+
+| Stat | Value |
+|------|-------|
+| **Hold distance** | `5 + QF × 0.5` blocks |
+| **Pull factor** | `0.45 + QF × 0.05` |
+| **Move step** | 1.4 blocks/tick (scaled by mass) |
+| **Reel step** | 0.5 (while Lock is on) |
+| **Reel length** | 0.5 – 28 blocks |
+| **Unlock** | Free with the quirk |
+
+</AbilityCard>
+
+### Puppet (All)
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/multi_puppet.png"
+  name="Puppet (All)"
+  slot="Slot 2"
+  mode="Hold"
+  stamina="10 / 1s">
+
+Hold to drag every tagged target to a point in front of your crosshair. Bigger or many targets need more Strength — heavy loads slow you down.
+
+| Stat | Value |
+|------|-------|
+| **Hold distance** | `5 + QF × 0.5` blocks |
+| **Pull factor** | `0.45 + QF × 0.05` |
+| **Move step** | 1.4 blocks/tick (scaled by mass) |
+| **Reel step** | 1.0 (while Lock is on) |
+| **Reel length** | 0.5 – 28 blocks |
+| **Unlock** | 3 points, requires Puppet (Single) |
+
+</AbilityCard>
+
+## Slot 3 — Swing
+
+### Manual Swing
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/whip_swing.png"
+  name="Manual Swing"
+  slot="Slot 3"
+  mode="Hold"
+  stamina="4 / 1s">
+
+Latch a chain and swing. Hold WASD to build momentum. Space climbs up the chain, Shift slides down. Release to fling with your momentum. Primarily used to raise and lower user onto surfaces.
+
+Aims at the block you are looking at. Does nothing if the raycast misses.
+
+| Stat | Value |
+|------|-------|
+| **Range** | `28 + QF × 3` |
+| **Max rope** | 48 blocks |
+| **Max speed** | `2.4 × (1 + QF × 0.12)` |
+| **Unlock** | 2 points, requires Whip Zip II |
+
+</AbilityCard>
+
+### Web Swing
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/web_swing.png"
+  name="Web Swing"
+  slot="Slot 3"
+  mode="Hold"
+  stamina="3 / 1s"
+  cooldown="1s on enable">
+
+Swing without aiming at a block when solid terrain is nearby below or beside you. Whips auto search for a solid latch ahead and above, or fall back to an air pivot. Steer with WASD and the camera, Shift brakes, Jump hops. Release near the top of the arc to fling forward — holding too long snaps the whip with almost no launch.
+
+| Stat | Value |
+|------|-------|
+| **Search range** | 32 blocks |
+| **Pivot distance** | 14 – 28 blocks |
+| **Takeoff boost** | 0.48 |
+| **Max speed** | `3.8 × (1 + QF × 0.14)` |
+| **Max ground height** | 12 blocks |
+| **Unlock** | 3 points, requires Manual Swing |
+
+</AbilityCard>
+
+## Slot 4 — Zip / Throw
+
+### Whip Zip
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/whip_zip.png"
+  name="Whip Zip"
+  slot="Slot 4"
+  mode="Hold"
+  stamina="12 on use">
+
+Zip toward the block you're looking at, or if you miss, auto-latch a solid block ahead of you (prefers the center of your view; does nothing in open air). Surfaces give a quick directional burst.
+
+With [Zip Slam](./upgrades.mdx#movement) unlocked, hold on a living target to reel in until you release or slam: damage scales with how far the zip was, up to the max at full range. If they're already tagged, the existing whip yanks you both together for the kick without spawning a new tether.
+
+| Stat | Value |
+|------|-------|
+| **Range** | Zip I: `10 + QF × 2` · Zip II: `20 + QF × 3` |
+| **Pull power** | Zip I: `1.2` · Zip II: `2.0`, plus `QF × 0.04` |
+| **Slam damage** | `8 + QF × 2` with Zip Slam, otherwise 0 |
+| **Auto-latch cone** | 28° half-angle if the look ray misses |
+| **Unlock** | Free with the quirk (Zip I) |
+
+</AbilityCard>
+
+### Charge Zip
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/charge_zip.png"
+  name="Charge Zip"
+  slot="Slot 4"
+  mode="Hold"
+  stamina="16 on use">
+
+Hold to shoot whips from both hands, stretch backward, and fling yourself forwards. The longer you hold, the harder you launch. Entities in your path take damage.
+
+Launch power and path damage scale with charge ratio and QF. Hits apply for a short window after you fling (about 24 ticks) in a 2.15-block radius, up to 4 entities.
+
+| Stat | Value |
+|------|-------|
+| **Range** | `10 + QF × 3` |
+| **Max charge** | 80 ticks (4 seconds) |
+| **Base launch** | 1.1 |
+| **Max launch** | I: `4.0 + QF × 0.12` · II: `5.0 + QF × 0.12`, then × `(1 + QF × 0.08)` |
+| **Damage** | I: 5 · II: `8 + QF` (scaled by charge) |
+| **Max hits** | 4 |
+| **Unlock** | 2 points, requires Whip Zip II |
+
+</AbilityCard>
+
+### Block Toss
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/block_toss.png"
+  name="Block Toss"
+  slot="Slot 4"
+  mode="Press"
+  stamina="12 on use">
+
+Unused whips wrap random nearby blocks (never chests or other containers) and hover them around you. Press again to throw one. Harder blocks do more damage. Hitting a mob drops the block as an item; hitting terrain places it.
+
+Uses free **grab** slots, so tagged enemies reduce how many blocks you can carry.
+
+| Stat | Value |
+|------|-------|
+| **Range** | `8 + QF`, plus `QF × 1` bonus |
+| **Throw speed** | `1.35 + QF × 0.05` |
+| **Damage** | `1 + (1.5 × block hardness)` |
+| **Knockback** | 0.35 |
+| **Unlock** | 3 points |
+
+</AbilityCard>
+
+## Slot 5 — Utility / Defense
+
+### Lock
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/lock.png"
+  name="Lock"
+  slot="Slot 5"
+  mode="Toggle"
+  stamina="No stamina">
+
+Toggle to lock tether length, turning Blackwhip into a lead. Behavior changes based on the size and strength of the entity(s).
+
+Weaker targets stay leashed. Stronger or heavier targets can drag you. While Lock is on, Puppet scroll reels the rope in or out.
+
+| Stat | Value |
+|------|-------|
+| **Strength** | `min(1.0 + QF × 0.1, 6.0)` |
+| **Unlock** | 2 points |
+
+</AbilityCard>
+
+### Disarm
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/disarm.png"
+  name="Disarm"
+  slot="Slot 5"
+  mode="Press"
+  stamina="10 on use">
+
+Shoot a tip that tries to rip a held item into your inventory. Shields are targeted first (offhand or while blocking). Strength vs Strength is a chance roll — blocking raises their defense.
+
+Uses **one independent chain**, not a grab slot.
+
+| Stat | Value |
+|------|-------|
+| **Range** | `12 + QF × 1.5` |
+| **Success chance** | `50% + 12% × (your Strength − their defense)`, clamped to **8% – 92%** |
+| **Blocking** | Target defense × **1.75** |
+| **Unlock** | 2 points, requires Item Pull |
+
+</AbilityCard>
+
+### Auto Pickup
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/magnet.png"
+  name="Auto Pickup"
+  slot="Slot 5"
+  mode="Toggle"
+  stamina="No stamina">
+
+Toggle to send unused whips after nearby dropped items and pull them into your inventory. Range grows with quirk factor. Tagged enemies occupy the same whip slots.
+
+Needs line of sight to the item. Range comes from Auto Pickup I / II.
+
+| Stat | Value |
+|------|-------|
+| **Range** | 3 or 6 blocks + `QF × 1` |
+| **Unlock** | Auto Pickup I (2 points, requires Item Pull) |
+
+</AbilityCard>
+
+### Body Reinforce
+
+<AbilityCard
+  icon="/img/quirks/blackwhip/body_reinforce.png"
+  name="Body Reinforce"
+  slot="Slot 5"
+  mode="Toggle"
+  stamina="Converts stamina to body damage">
+
+Toggle to stop all stamina drain. Stamina that would have been spent is converted into body damage instead.
+
+Every stamina point that would have been spent deals **0.5** body damage, spread across all physical body parts. Combine with [Limb Reinforcement](./upgrades.mdx#limb-reinforcement) so wraps still protect injured limbs.
+
+| Stat | Value |
+|------|-------|
+| **Stamina → damage** | 0.5 body damage per stamina point |
+| **Unlock** | 10 points, requires Limb Reinforcement |
+
+</AbilityCard>
+
+## Stamina Quick Reference
+
+| Ability | Cost | When |
+|---------|------|------|
+| Tether / Detach / Lock / Auto Pickup | None | — |
+| Disarm | 10 | On use |
+| Whip Zip | 12 | On use |
+| Block Toss | 12 | On use |
+| Charge Zip | 16 | On use |
+| Web Swing | 3 / 1s | While held (1s cooldown when enabled) |
+| Manual Swing | 4 / 1s | While held |
+| Puppet (Single) | 8 / 1s | While held |
+| Puppet (All) | 10 / 1s | While held |
+| Body Reinforce | Special | Redirects **all** stamina costs into body damage |

@@ -23,6 +23,11 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -103,7 +108,10 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
+    },
+  } satisfies Preset.ThemeConfig & {mermaid: {theme: {light: string; dark: string}}},
 };
 
 export default config;

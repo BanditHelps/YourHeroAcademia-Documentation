@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
-# Quirks
+# How to obtain
 
-This section documents each quirk available in the mod. TBD
+Currently, the only way to obtain quirks is through the palladium command.
+
+```/palladium superpower add <quirk_id> @p```

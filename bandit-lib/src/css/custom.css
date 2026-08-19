@@ -28,3 +28,60 @@
   --ifm-color-primary-lightest: #9ac4ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Pixel-art quirk icons (Minecraft textures scaled up without blurring). */
+.quirk-icon {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.quirk-icon--sm {
+  width: 24px;
+  height: 24px;
+}
+
+.quirk-icon--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.quirk-icon--title {
+  width: 56px;
+  height: 56px;
+}
+
+.markdown table img[src*="/img/quirks/"] {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  vertical-align: middle;
+}
+
+.markdown h3:has(+ .ability-card) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.quirk-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quirk-title h1 {
+  margin: 0;
+}
